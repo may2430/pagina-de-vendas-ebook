@@ -1,4 +1,330 @@
-# pagina-de-vendas-ebook
+#     .container {
+        max-width: 960px;
+        margin: auto;
+        padding: 0 20px;
+        position: relative;
+        z-index: 2; /* Garante que o texto fique acima da imagem e do overlay */
+    }
+
+    /* Hero Section (Topo da página) */
+    .hero {
+        position: relative; /* Container pai para posicionamento */
+        color: #a020f0; /* Roxo para destaque */
+        text-align: center;
+        padding: 80px 20px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+        min-height: 400px; /* Altura mínima para o hero */
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    .hero-image {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        z-index: 0; /* Garante que a imagem fique atrás do texto */
+    }
+    
+    /* Camada transparente para o texto */
+    .hero::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.3); /* Camada semi-transparente */
+        z-index: 1; /* Garante que a camada fique entre a imagem e o texto */
+    }
+
+    .hero h1 {
+        /* Aplicação da fonte 'Montserrat' para o título */
+        font-family: 'Montserrat', sans-serif;
+        font-size: 2.5em;
+        margin-bottom: 10px;
+        font-weight: bold; /* Ativa o negrito como solicitado */
+    }
+
+    .hero p {
+        font-size: 1.2em;
+        color: #ffffff; /* Texto branco para o subtítulo */
+        opacity: 0.9;
+    }
+
+    /* Seção do Ebook */
+    .ebook-section {
+        padding: 60px 0;
+        background-color: #000000; /* Fundo preto */
+        color: #ffffff;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        position: relative;
+        overflow: hidden;
+    }
+
+    /* Mockup Container */
+    .mockup-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 20px;
+        margin-bottom: 30px;
+    }
+
+    /* Mockup de Tablet */
+    .tablet-mockup {
+        width: 400px;
+        height: 500px;
+        background-color: #1a1a1a;
+        border: 10px solid #2d2d2d;
+        border-radius: 20px;
+        box-shadow: 0 10px 20px rgba(160, 32, 240, 0.3); /* Sombra roxa */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        overflow: hidden;
+        position: relative;
+    }
+
+    /* Mockup de Celular */
+    .phone-mockup {
+        width: 250px;
+        height: 450px;
+        background-color: #1a1a1a;
+        border: 10px solid #2d2d2d;
+        border-radius: 40px;
+        box-shadow: 0 10px 20px rgba(160, 32, 240, 0.3); /* Sombra roxa */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        overflow: hidden;
+        position: relative;
+    }
+
+    /* Imagem da capa dentro dos mockups */
+    .mockup-image {
+        width: 100%;
+        height: 100%;
+        object-fit: cover; /* A imagem irá cobrir o espaço do mockup */
+    }
+
+    .ebook-section h2 {
+        font-size: 2em;
+        color: #a020f0; /* Roxo */
+    }
+
+    .ebook-section p {
+        max-width: 700px;
+        font-size: 1.1em;
+        margin-top: 20px;
+        margin-bottom: 40px;
+    }
+
+    /* Botão de Chamada para Ação (CTA) */
+    .cta-button {
+        display: inline-block;
+        background-color: #a020f0; /* Roxo */
+        color: #ffffff;
+        padding: 12px 30px;
+        text-decoration: none;
+        font-size: 1.2em;
+        font-weight: bold;
+        border-radius: 8px; /* Mais quadradinho */
+        box-shadow: 0 4px 8px rgba(160, 32, 240, 0.2); /* Sombra mais sutil */
+        transition: all 0.3s ease;
+        margin-top: 20px;
+    }
+
+    .cta-button:hover {
+        background-color: #8a2be2; /* Roxo um pouco mais escuro */
+        transform: translateY(-2px); /* Efeito de elevação sutil */
+        box-shadow: 0 6px 12px rgba(160, 32, 240, 0.3);
+    }
+    
+    .cta-button.secondary {
+         background-color: #000000;
+         border: 2px solid #a020f0;
+         color: #a020f0;
+    }
+    
+     .cta-button.secondary:hover {
+        background-color: #1a1a1a;
+    }
+
+
+    /* Seção de Conteúdo */
+    .content-section {
+        padding: 60px 0;
+        background-color: #1a1a1a; /* Cinza escuro para a seção de conteúdo */
+        text-align: center;
+    }
+    
+    .content-section .cta-bottom {
+         margin-top: 40px;
+    }
+
+    .content-section h3 {
+        font-size: 1.8em;
+        color: #a020f0; /* Roxo */
+        margin-bottom: 40px;
+    }
+
+    .content-section .content-item {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 40px;
+        text-align: left;
+        background-color: #000000; /* Fundo preto para os itens */
+        color: #ffffff;
+        padding: 25px;
+        border-radius: 10px;
+        border: 1px solid #a020f0; /* Borda em roxo */
+        box-shadow: 0 2px 8px rgba(160, 32, 240, 0.2);
+    }
+
+    .content-section .content-item .icon {
+        font-size: 2em;
+        color: #a020f0;
+        margin-right: 20px;
+    }
+
+    .content-section .content-item h4 {
+        font-size: 1.3em;
+        margin: 0;
+        color: #a020f0;
+    }
+
+    .content-section .content-item p {
+        margin: 5px 0 0 0;
+        font-size: 1em;
+    }
+    
+    .content-section .content-item:nth-child(even) {
+         flex-direction: row-reverse;
+         text-align: right;
+    }
+    
+    .content-section .content-item:nth-child(even) .icon {
+         margin-left: 20px;
+         margin-right: 0;
+    }
+
+    /* Seção de Benefícios (design mais visual) */
+    .benefits-section {
+        padding: 60px 0;
+        background-color: #000000; /* Fundo preto */
+        color: #ffffff;
+        text-align: center;
+    }
+    
+    .benefits-section h3 {
+         color: #a020f0; /* Roxo */
+         font-size: 2em;
+         margin-bottom: 40px;
+    }
+    
+    .benefits-section ul {
+        list-style: none;
+        padding: 0;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 20px;
+        justify-content: center;
+    }
+
+    .benefits-section li {
+        background-color: #1a1a1a;
+        padding: 30px;
+        border-radius: 15px;
+        border: 1px solid #a020f0;
+        box-shadow: 0 4px 12px rgba(160, 32, 240, 0.3);
+        font-size: 1.1em;
+        text-align: center;
+        position: relative;
+        color: #ffffff;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .benefits-section .icon-benefit {
+        font-size: 3em;
+        color: #a020f0;
+        margin-bottom: 15px;
+    }
+
+
+    /* Seção do Autor -> Atualizada para focar no Ebook */
+    .author-section {
+        padding: 60px 0;
+        background-color: #1a1a1a; /* Cinza escuro para a seção do autor */
+        text-align: center;
+        color: #ffffff;
+    }
+    
+    .author-section .cta-bottom {
+         margin-top: 40px;
+    }
+
+    .author-section h3 {
+        font-size: 1.8em;
+        color: #a020f0; /* Roxo */
+    }
+
+    .author-section p {
+        max-width: 700px;
+        margin: 20px auto;
+        font-size: 1.1em;
+    }
+
+    /* Rodapé */
+    footer {
+        background-color: #000000;
+        color: #666666;
+        text-align: center;
+        padding: 30px 20px;
+        margin-top: 40px;
+    }
+
+    /* Responsividade para telas menores */
+    @media (max-width: 768px) {
+        .hero h1 {
+            font-size: 2em;
+        }
+        .ebook-section .mockup-container {
+            flex-direction: column;
+            gap: 50px; /* Aumenta o espaço entre os mockups quando eles empilham */
+        }
+         .content-section .content-item {
+            flex-direction: column;
+            text-align: center;
+        }
+
+        .content-section .content-item:nth-child(even) {
+            flex-direction: column;
+        }
+        
+        .content-section .content-item .icon {
+            margin: 0 0 10px 0;
+        }
+
+         .content-section .content-item:nth-child(even) .icon {
+            margin: 0 0 10px 0;
+        }
+
+        .benefits-section li {
+             padding: 20px;
+             font-size: 1em;
+        }
+    }
+</style>
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
